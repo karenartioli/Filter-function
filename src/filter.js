@@ -3,13 +3,14 @@
  * @param {function} predicateFn
  * @returns {any} element of inputArray that meets the condition of predicateFn
  */
-function find(inputArray, predicateFn) {
+function filter(inputArray, predicateFn) {
+    let returnArray = [];
     for (const element of inputArray) {
       if (predicateFn(element)) {
-        return element;
+        returnArray.push(element);
       }
     }
-    return undefined;
+    return returnArray;
   }
   
   function isNegative(num) {
@@ -25,4 +26,4 @@ function find(inputArray, predicateFn) {
 }
   
 
-export { find, isNegative, isLessThanMinusFiveHundred, isUpperCase };
+export { filter, isNegative, isLessThanMinusFiveHundred, isUpperCase };
